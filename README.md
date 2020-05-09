@@ -11,3 +11,13 @@ OpenMessaging, which includes the establishment of industry guidelines and messa
 
 
 ## ![Powered by Linux Foundation](http://openmessaging.cloud/images/linux-foundation-logo.png)
+
+
+# 问题
+
+    - 单个producer发送多个topic的消息，每个topic的消息格式不同
+        GenericRecord = Message？
+    - GenericRecord/Message
+    
+    - 用户习惯
+        - 
