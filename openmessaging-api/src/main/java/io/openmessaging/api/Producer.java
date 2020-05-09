@@ -41,7 +41,7 @@ import java.util.concurrent.ExecutorService;
  * @version OMS 1.2.0
  * @since OMS 1.2.0
  */
-public interface Producer extends Admin {
+public interface Producer<T> extends Admin {
 
     /**
      * Sends a message to the specified destination synchronously, the destination should be preset to {@link
@@ -83,4 +83,7 @@ public interface Producer extends Admin {
      * @param callbackExecutor
      */
     void setCallbackExecutor(final ExecutorService callbackExecutor);
+
+
+    void send(T t);
 }

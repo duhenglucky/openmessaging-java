@@ -14,30 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.openmessaging.api;
 
-package io.openmessaging.api.order;
+public interface GenericMessageListener<T> {
 
-import io.openmessaging.api.Admin;
-import io.openmessaging.api.Message;
-import io.openmessaging.api.SendResult;
-
-/**
- * Sequential message producer interface  
- *
- * @version OMS 1.2.0
- * @since OMS 1.2.0
- */
-public interface OrderProducer extends Admin {
-
-    /**
-     * Send message in order
-     *
-     * @param message
-     * @param shardingKey Order message selection factor, the sending method selects a specific message queue based on
-     * shardingKey
-     * @return {@link SendResult} Message delivery result, including message Id.
-     */
-    SendResult send(final Message message, final String shardingKey);
-
-    <T> SendResult send(final T t, final String shardingKey);
+    Action consume(final T t, final ConsumeContext context);
 }

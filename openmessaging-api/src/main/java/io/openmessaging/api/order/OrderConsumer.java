@@ -19,6 +19,7 @@ package io.openmessaging.api.order;
 
 import io.openmessaging.api.Admin;
 import io.openmessaging.api.ExpressionType;
+import io.openmessaging.api.GenericMessageListener;
 import io.openmessaging.api.MessageSelector;
 
 /**
@@ -52,4 +53,9 @@ public interface OrderConsumer extends Admin {
      * @param listener Message callback listener
      */
     void subscribe(final String topic, final MessageSelector selector, final MessageOrderListener listener);
+
+    void subscribe(final String topic, final MessageSelector selector, final GenericMessageListener listener);
+
+    void subscribe(final String topic, final String subExpression, final GenericMessageListener listener);
+
 }

@@ -60,4 +60,9 @@ public interface OMSBuiltinKeys {
      */
     String DRIVER = "driver";
 
+
+    String SERIALLIZER = "serializer";
+
+    String DESERIALIZER = "deserializer";
+
 }

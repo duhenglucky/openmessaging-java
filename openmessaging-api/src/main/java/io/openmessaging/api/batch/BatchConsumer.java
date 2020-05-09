@@ -18,6 +18,7 @@
 package io.openmessaging.api.batch;
 
 import io.openmessaging.api.Admin;
+import io.openmessaging.api.GenericMessageListener;
 
 /**
  * Batch message consumer, used to subscribe to messages in batch.
@@ -44,4 +45,7 @@ public interface BatchConsumer extends Admin {
      * @param topic
      */
     void unsubscribe(final String topic);
+
+    void subscribe(final String topic, final String subExpression, final GenericMessageListener listener);
+
 }
